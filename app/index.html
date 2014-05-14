@@ -15,18 +15,32 @@
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
-
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  
+<div ng-controller="TodoController" class="todoPanel">
 
-  <div ng-view></div>
+  <h1>My First Angular TODO App</h1>
+ 
+  <hr/>
+  
+  <div> TODO </div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <ul>
+    <li ng-repeat="todo in todos">
+      <input type="checkbox" ng-checked="{{todo.completed}}"></input> {{todo.name}}
+    </li>
+    <li ng-show="addNewTodo">
+      <input type="text" ng-model="newValue" ng-blur="saveNewTodo()"></input> 
+    </li>
+  </ul>
+
+  <div class="btnContainer">
+    <button class="add" ng-click="showNewTodo()"><span>Add New</span></button>
+  </div>
+
+</div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
