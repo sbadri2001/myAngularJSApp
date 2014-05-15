@@ -27,7 +27,7 @@ myApp
   		$scope.addNewTodo = true;
   	};
 
-  	$scope.saveNewTodo = function(){
+  	$scope.saveNewTodo = function(event){
   		var value = event.target.value;
 
   		if(value !== ''){
