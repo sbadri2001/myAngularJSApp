@@ -25,17 +25,17 @@
  
   <hr/>
   
-  <div> TODO </div>
+  <h3> TO DO LIST</h3>
 
   <ul>
     <li ng-repeat="todo in todos">
       <input type="checkbox" ng-checked="{{todo.completed}}"></input> {{todo.name}}
     </li>
-    <li ng-show="addNewTodo">
-      <input type="text" ng-model="newValue" ng-blur="saveNewTodo($event)"></input> 
-    </li>
+    
   </ul>
-
+<div ng-show="addNewTodo">
+      <input type="text" ng-model="newValue" ng-blur="saveNewTodo($event)"></input> 
+    </div>
   <div class="btnContainer">
     <button class="add" ng-click="showNewTodo()"><span>Add New</span></button>
   </div>
